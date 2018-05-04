@@ -3,7 +3,7 @@ var path = require('path');
 var bodyParser = require('body-parser');
 
 var app = express();
-var port = 8080;
+var port = 55554;
 
 // this allows cross origin access (you need this for mobile apps)
 var allowCrossDomain = function(req, res, next) {
