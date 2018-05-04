@@ -1,0 +1,30 @@
+{
+  "name": "WindowsPersonalAssistantServer",
+  "version": "1.0.0",
+  "description": "This provides CRUD functionality of Tasks, Notes, and Events in the local MongoDB",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dcargs/Windows-Personal-Assistant-Server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dcargs/Windows-Personal-Assistant-Server/issues"
+  },
+  "homepage": "https://github.com/dcargs/Windows-Personal-Assistant-Server#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "install": "^0.10.4",
+    "mongodb": "^3.0.7",
+    "nodemon": "^1.17.2",
+    "npm": "^5.6.0",
+    "path": "^0.12.7"
+  }
+}
