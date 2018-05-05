@@ -31,7 +31,7 @@ router.post('/get', function(req, res){
         dbo.collection("tasks").find({}).toArray(function(err, result){
           if (err) throw err;
           db.close();
-          res.send(result);
+          res.send(JSON.stringify(result));
         });
     });
   } else {
