@@ -13,13 +13,14 @@ For the INFOTC-4400 Final Project, allows CRUD of Notes, Tasks, and Events
 ### This function creates an event inside of MongoDB
 #### Things to send:
 * session_token -> string
-* event -> string eg. {"title": "first event", "date": "05/14/18"}
+* title -> string
+* date -> string (any valid DateTime string)
 #### Returns:
 * success: 200
 * failure: 401
 
 ## http://ec2-34-218-76-81.us-west-2.compute.amazonaws.com:55554/event/get -> POST
-### This function returns all the events inside of mongodb
+### This function returns all the events inside of mongodb from oldest to newest
 #### Things to send:
 * session_token -> string
 #### Returns:
@@ -31,7 +32,8 @@ For the INFOTC-4400 Final Project, allows CRUD of Notes, Tasks, and Events
 #### Things to send:
 * session_token -> string
 * id -> string
-* newValue -> string eg. {"title": "first event", "date": "05/14/18"}
+* title -> string
+* date -> string (any valid DateTime string)
 #### Returns:
 * success: 200
 * failure: 401
@@ -50,7 +52,8 @@ For the INFOTC-4400 Final Project, allows CRUD of Notes, Tasks, and Events
 ### This function creates a note inside of MongoDB
 #### Things to send:
 * session_token -> string
-* note -> string eg. {"title": "first note", "body": "this is the body of the first note"}
+* title -> string
+* body -> string
 #### Returns:
 * success: 200
 * failure: 401
@@ -68,7 +71,8 @@ For the INFOTC-4400 Final Project, allows CRUD of Notes, Tasks, and Events
 #### Things to send:
 * session_token -> string
 * id -> string
-* newValue -> string eg. {"title": "first note", "body": "this is the body of the first note"}
+* title -> string
+* body -> string
 #### Returns:
 * success: 200
 * failure: 401
@@ -87,13 +91,15 @@ For the INFOTC-4400 Final Project, allows CRUD of Notes, Tasks, and Events
 ### This function creates a task inside of MongoDB
 #### Things to send:
 * session_token -> string
-* task -> string eg. {"title": "first task", "due_date": "05/14/18", "description": "insert this task into mongodb"}
+* title -> string
+* due_date -> string (any valid DateTime string)
+* description -> string
 #### Returns:
 * success: 200
 * failure: 401
 
 ## http://ec2-34-218-76-81.us-west-2.compute.amazonaws.com:55554/task/get -> POST
-### This function returns all the tasks in MongoDB
+### This function returns all the tasks in MongoDB from oldest to newest
 #### Things to send:
 * session_token -> string
 #### Returns:
@@ -105,7 +111,9 @@ For the INFOTC-4400 Final Project, allows CRUD of Notes, Tasks, and Events
 #### Things to send:
 * session_token -> string
 * id -> string
-* newValue -> string eg. {"title": "first task", "due_date": "05/14/18", "description": "insert this task into mongodb"}
+* title -> string
+* due_date -> string (any valid DateTime string)
+* description -> string
 #### Returns:
 * success: 200
 * failure: 401
