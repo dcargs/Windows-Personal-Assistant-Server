@@ -31,7 +31,7 @@ router.post('/get', function(req, res){
     MongoClient.connect(url, function(err, db) {
       if (err) throw err;
       var dbo = db.db("WindowsPersonalAssistant");
-        dbo.collection("events").find({}).toArray(function(err, result){
+        dbo.collection("events").find({}).sort({date: 1}).toArray(function(err, result){
           if (err) throw err;
           db.close();
           res.send(result);
@@ -45,7 +45,9 @@ router.post('/get', function(req, res){
 router.post('/edit', function(req, res){
   if(req.body.session_token == "!QAZ@WSX#EDC1qaz2wsx3edc") {
     let query = { _id: ObjectID(req.body.id) };
-    let newValue = JSON.parse(req.body.newValue);
+    let title = req.body.title;
+    let date = req.body.date;
+    let newValue = {"title": title, "date": date};
     let url = "mongodb://localhost:27017/";
     MongoClient.connect(url, function(err, db) {
       if (err) throw err;
