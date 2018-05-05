@@ -6,7 +6,7 @@ var ObjectID = require('mongodb').ObjectID;
 router.post('/create', function(req, res){
   //var x = {"title": "first task", "due_date": "05/14/18", "description": "insert this task into mongodb"};
   if(req.body.session_token == "!QAZ@WSX#EDC1qaz2wsx3edc") {
-    let task = JSON.parse(req.body.task);
+    let task = {"title": req.body.title, "due_date": req.body.due_date, "description": req.body.description}
     let url = "mongodb://localhost:27017/";
     MongoClient.connect(url, function(err, db) {
       if (err) throw err;
