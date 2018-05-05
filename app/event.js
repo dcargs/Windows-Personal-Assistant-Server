@@ -6,7 +6,10 @@ var ObjectID = require('mongodb').ObjectID;
 router.post('/create', function(req, res){
   //var x = {"title": "first event", "date": "05/14/18"};
   if(req.body.session_token == "!QAZ@WSX#EDC1qaz2wsx3edc") {
-    let event = JSON.parse(req.body.event);
+    //let event = JSON.parse(req.body.event);
+    let title = req.body.title;
+    let date = req.body.date;
+    let event = {"title": title, "date": date};
     let url = "mongodb://localhost:27017/";
     MongoClient.connect(url, function(err, db) {
       if (err) throw err;
