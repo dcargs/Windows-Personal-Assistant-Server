@@ -42,7 +42,7 @@ router.post('/get', function(req, res){
 router.post('/edit', function(req, res){
   if(req.body.session_token == "!QAZ@WSX#EDC1qaz2wsx3edc") {
     let query = { _id: ObjectID(req.body.id) };
-    let newValue = JSON.parse(req.body.newValue);
+    let newValue = {"title": req.body.title, "due_date": req.body.due_date, "description": req.body.description};
     let url = "mongodb://localhost:27017/";
     MongoClient.connect(url, function(err, db) {
       if (err) throw err;
