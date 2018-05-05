@@ -6,7 +6,7 @@ var ObjectID = require('mongodb').ObjectID;
 router.post('/create', function(req, res){
   //var x = {"title": "first note", "body": "this is the body of the first note"};
   if(req.body.session_token == "!QAZ@WSX#EDC1qaz2wsx3edc") {
-    let note = JSON.parse(req.body.note);
+    let note = {"title": req.body.title, "body": req.body.body};
     let url = "mongodb://localhost:27017/";
     MongoClient.connect(url, function(err, db) {
       if (err) throw err;
@@ -42,7 +42,7 @@ router.post('/get', function(req, res){
 router.post('/edit', function(req, res){
   if(req.body.session_token == "!QAZ@WSX#EDC1qaz2wsx3edc") {
     let query = { _id: ObjectID(req.body.id) };
-    let newValue = JSON.parse(req.body.newValue);
+    let newValue = {"title": req.body.title, "body": req.body.body};
     let url = "mongodb://localhost:27017/";
     MongoClient.connect(url, function(err, db) {
       if (err) throw err;
