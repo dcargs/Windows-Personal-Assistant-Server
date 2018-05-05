@@ -31,7 +31,7 @@ router.post('/get', function(req, res){
     MongoClient.connect(url, function(err, db) {
       if (err) throw err;
       var dbo = db.db("WindowsPersonalAssistant");
-        dbo.collection("events").find({}).sort({date: 1}).toArray(function(err, result){
+        dbo.collection("events").find({}).sort({date: -1}).toArray(function(err, result){
           if (err) throw err;
           db.close();
           res.send(result);
